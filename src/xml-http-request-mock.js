@@ -15,16 +15,22 @@ export class XMLHttpRequestMock {
   timeout = 0;
   _listeners = {};
 
-  open(method: string, url: string, isAsync: Boolean) {
+  /**
+   * @param method {String}
+   * @param url {String}
+   */
+  open(method, url) {
     this.method = method.toUpperCase();
     this.url = url;
-    this.isAsync = isAsync || true;
 
     this.readyState = XMLHttpRequestMock.OPENED;
     this.dispatchEvent('readystatechange');
   }
 
-  send(data: any) {
+  /**
+   * @param data {String}
+   */
+  send(data) {
     if (this.readyState < XMLHttpRequestMock.OPENED) {
       throw new Error('Connection not yet open');
     }
@@ -40,7 +46,12 @@ export class XMLHttpRequestMock {
     }
   }
 
-  receive(status: number, headers: Object, content: string) {
+  /**
+   * @param status {Number}
+   * @param headers {Object}
+   * @param content {String}
+   */
+  receive(status, headers, content) {
     this.status = status;
     this.responseHeaders = headers;
     this.readyState = XMLHttpRequestMock.HEADERS_RECEIVED;
@@ -53,10 +64,17 @@ export class XMLHttpRequestMock {
     this.dispatchEvent('load');
   }
 
-  setRequestHeader(name: string, value: string) {
+  /**
+   * @param name {String}
+   * @param value {String}
+   */
+  setRequestHeader(name, value) {
     this.requestHeaders[name.toLocaleLowerCase()] = value;
   }
 
+  /**
+   * @returns {String}
+   */
   getAllResponseHeaders() {
     let headerStr = '';
     for (let header in this.responseHeaders) {
@@ -65,12 +83,20 @@ export class XMLHttpRequestMock {
     return headerStr;
   }
 
-  addEventListener(event: string, fn: Function) {
+  /**
+   * @param event {String}
+   * @param callback {Function}
+   */
+  addEventListener(event, callback) {
     this._listeners[event] = this._listeners[event] || [];
-    this._listeners[event].push(fn);
+    this._listeners[event].push(callback);
   }
 
-  dispatchEvent(event: string, data: any) {
+  /**
+   * @param event {String}
+   * @param data {*}
+   */
+  dispatchEvent(event, data) {
     if (Array.isArray(this._listeners[event])) {
       for (let i = 0; i < this._listeners[event].length; i++) {
         this._listeners[event][i].apply(this, data);
@@ -78,23 +104,38 @@ export class XMLHttpRequestMock {
     }
   }
 
-  set onreadystatechange(fn: Function) {
+  /**
+   * @param fn {Function}
+   */
+  set onreadystatechange(fn) {
     this.addEventListener('readystatechange', fn);
   }
 
-  set onload(fn: Function) {
+  /**
+   * @param fn {Function}
+   */
+  set onload(fn) {
     this.addEventListener('load', fn);
   }
 
-  set ontimeout(fn: Function) {
+  /**
+   * @param fn {Function}
+   */
+  set ontimeout(fn) {
     this.addEventListener('timeout', fn);
   }
 
-  set onerror(fn: Function) {
+  /**
+   * @param fn {Function}
+   */
+  set onerror(fn) {
     this.addEventListener('error', fn);
   }
 
-  set onabort(fn: Function) {
+  /**
+   * @param fn {Function}
+   */
+  set onabort(fn) {
     this.addEventListener('abort', fn);
   }
 }
