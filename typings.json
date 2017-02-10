@@ -1,0 +1,4 @@
+{
+  "name": "aurelia-http-client-mock",
+  "main": "dist/aurelia-testing.d.ts"
+}
