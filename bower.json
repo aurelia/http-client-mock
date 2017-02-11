@@ -1,0 +1,24 @@
+{
+  "name": "aurelia-http-client-mock",
+  "version": "1.0.0-alpha.0.0.1",
+  "description": "A library to mock aurelia-http-client during test and development lifecycle.",
+  "keywords": [
+    "aurelia",
+    "testing",
+    "mock"
+  ],
+  "homepage": "http://aurelia.io",
+  "main": "dist/commonjs/aurelia-http-client-mock.js",
+  "moduleType": "node",
+  "license": "MIT",
+  "authors": [
+    "Thomas Schlage <t.schlage@gmx.net> (http://www.zalando.de/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/aurelia/http-client-mock"
+  },
+  "dependencies": {
+    "aurelia-http-client": "^1.0.0"
+  }
+}
