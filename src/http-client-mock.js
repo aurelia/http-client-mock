@@ -6,6 +6,9 @@ import {ExpectationBuilder} from './expectation-builder';
 
 export class HttpClientMock extends http.HttpClient {
 
+  handler = null;
+  requestProcessorFactories = null;
+
   /**
    * @constructor
    */
