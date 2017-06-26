@@ -1,10 +1,11 @@
 {
   "name": "aurelia-http-client-mock",
-  "version": "1.0.0-alpha.0.0.1",
+  "version": "0.0.3",
   "description": "A library to mock aurelia-http-client during test and development lifecycle.",
   "keywords": [
     "aurelia",
     "testing",
+    "http",
     "mock"
   ],
   "homepage": "http://aurelia.io",
@@ -44,11 +45,9 @@
       "core-js": "^1.1.4"
     }
   },
-  "peerDependencies": {
-    "aurelia-http-client": "^1.0.0"
-  },
   "dependencies": {
-    "aurelia-http-client": "^1.0.0"
+    "aurelia-http-client": "^1.0.4",
+    "aurelia-dependency-injection": "^1.3.1"
   },
   "devDependencies": {
     "aurelia-tools": "^0.2.4",

@@ -18,7 +18,7 @@ export class HttpClientMock extends http.HttpClient {
       constructor() {
         super();
         this.addEventListener('sent', () => {
-          handler.handle(this)
+          handler.handle(this);
         });
       }
     }
