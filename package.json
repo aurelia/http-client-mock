@@ -1,6 +1,6 @@
 {
   "name": "aurelia-http-client-mock",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "A library to mock aurelia-http-client during test and development lifecycle.",
   "keywords": [
     "aurelia",
@@ -10,7 +10,7 @@
   ],
   "homepage": "http://aurelia.io",
   "bugs": {
-    "url": "https://github.com/aurelia/testing/issues"
+    "url": "https://github.com/aurelia/http-client-mock/issues"
   },
   "license": "MIT",
   "author": "Thomas Schlage <t.schlage@gmx.net> (http://www.zalando.de/)",
