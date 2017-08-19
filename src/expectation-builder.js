@@ -2,6 +2,8 @@ import {Expectation} from './expectation';
 
 export class ExpectationBuilder {
 
+  expectation = null;
+
   /**
    * @param handler {RequestHandler}
    */

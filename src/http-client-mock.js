@@ -6,6 +6,9 @@ import {ExpectationBuilder} from './expectation-builder';
 
 export class HttpClientMock extends http.HttpClient {
 
+  handler:RequestHandler;
+  requestProcessorFactories:Map<Object, Function>;
+
   /**
    * @constructor
    */
@@ -18,7 +21,7 @@ export class HttpClientMock extends http.HttpClient {
       constructor() {
         super();
         this.addEventListener('sent', () => {
-          handler.handle(this)
+          handler.handle(this);
         });
       }
     }

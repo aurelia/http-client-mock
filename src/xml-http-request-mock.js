@@ -6,6 +6,8 @@ export class XMLHttpRequestMock {
   static LOADING = 3;
   static DONE = 4;
 
+  url = '';
+  method = '';
   readyState = XMLHttpRequestMock.UNSENT;
   status = 0;
   requestText = '';
@@ -94,12 +96,11 @@ export class XMLHttpRequestMock {
 
   /**
    * @param event {String}
-   * @param data {*}
    */
-  dispatchEvent(event, data) {
+  dispatchEvent(event) {
     if (Array.isArray(this._listeners[event])) {
       for (let i = 0; i < this._listeners[event].length; i++) {
-        this._listeners[event][i].apply(this, data);
+        this._listeners[event][i].call(this);
       }
     }
   }
