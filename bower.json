@@ -1,6 +1,6 @@
 {
   "name": "aurelia-http-client-mock",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "A library to mock aurelia-http-client during test and development lifecycle.",
   "keywords": [
     "aurelia",
